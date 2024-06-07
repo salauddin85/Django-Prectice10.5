@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>this is home page</h1>
+    <h3>{{Author}},{{age}},{{details}}</h3>
+    <!-- ------------------------------------------- -->
+    {% for i in details %}
+    <h3>{{i.id}} {{i.roll}} {{i.department}}</h3>
+
+    {% endfor %}
+    <!-- ------------------------------------------------ -->
+    {% if age < 18 %}
+    <h4>You are child</h4>
+    {% elif age > 18 and age < 35 %}
+    <h4>You are Young</h4>
+    {% else %}
+    <h4>You are Adult</h4>
+    {% endif %}
+    <h3>Django Template Filtaring-----------------------</h3>
+    <!-- ------------------------------------------------------ -->
+    <!-- Django Template Filtaring -->
+
+    <h3>{{ val | add:"2" }} </h3>
+    <h3>{{ name | capfirst }}</h3>
+    <h3>{{ name1 | cut:" " }}</h3>
+    <h3>{{ birth |date:"D d M Y" }}</h3>
+    <h3>{{ lst | join:" // " }}</h3>
+    <h3>{{ lst | length }}</h3>
+    <h3>{{ num | make_list }}</h3>
+    <h3>{{ slice | slice:":2" }}</h3>
+    <h3>{{ birth | wordcount }}</h3>
+    
+
+
+  </body>
+</html>
